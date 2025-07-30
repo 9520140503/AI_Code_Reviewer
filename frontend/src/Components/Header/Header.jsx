@@ -21,7 +21,7 @@ function Header() {
     }
   ]
   return (
-    <div className='bg-white/20 backdrop-blur-lg w-full py-2 sm:py-6 fixed left-0 z-50 border-4 border-blue-300'>
+    <div className='bg-white/20 backdrop-blur-lg w-full py-2 sm:py-4 fixed left-0 z-50 border-4 border-blue-300'>
         <div className='flex items-center justify-around'>
             <div className='flex items-center gap-x-2 '>
                 <img src={Robot} alt="" 

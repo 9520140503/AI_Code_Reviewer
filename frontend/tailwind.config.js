@@ -1,3 +1,5 @@
+import { transform } from 'typescript';
+
 /** @type {import('tailwindcss').Config} */
 export default {
    content: [
@@ -12,11 +14,13 @@ export default {
           '50%': { transform: 'translateY(-10px)' },
         },
       },
-      animation: {
-        updown: 'updown 2s ease-in-out infinite',
-      },
+      animation:{
+        updown:'updown 0.25s ease-in-out infinite'
+      }
     },
   },
   plugins: [],
 }
+
+
 
