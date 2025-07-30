@@ -15,7 +15,7 @@ export default {
         },
       },
       animation:{
-        updown:'updown 0.25s ease-in-out infinite'
+        updown:'updown 1s ease-in-out infinite'
       }
     },
   },

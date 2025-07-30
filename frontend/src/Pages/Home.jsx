@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Robot from '../assets/Robot.png'; // Corrected import (case-sensitive, lowercase 'assets')
+import Robo from '../assets/Robo.png';
 import "../../src/index.css"
 function Home() {
   const authStatus = useSelector((state) => state.auth.status);
@@ -14,7 +15,7 @@ function Home() {
           {/* Image Div */}
           <div className="w-full md:w-1/2 flex justify-center order-1 md:order-1">
             <img
-              src={Robot}
+              src={Robo}
               alt="Digital AI interface with glowing code patterns and neural networks"
               onError={(e) => (e.target.src = '/assets/fallback-ai.jpg')}
               className="w-full max-w-xs sm:max-w-sm animate-updown"
@@ -22,7 +23,7 @@ function Home() {
           </div>
           {/* Heading and Button Div */}
           <div className="w-full md:w-1/2 text-center md:text-left order-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-white">
               Code Smarter with AI-Powered Precision
             </h1>
             <p className="text-base sm:text-lg text-gray-200 mb-6 leading-relaxed">
