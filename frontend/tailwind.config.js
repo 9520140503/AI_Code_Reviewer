@@ -16,7 +16,7 @@ export default {
       },
       animation:{
         updown:'updown 1s ease-in-out infinite'
-      }
+      },
     },
   },
   plugins: [],
