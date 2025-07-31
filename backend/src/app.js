@@ -27,6 +27,6 @@ app.get('/',(req,res) => {
 
 
 app.use('/user',userRouter);
-app.use('/ai',aiRoutes)
+app.use('/ai',aiRoutes);
 
 export default app;
