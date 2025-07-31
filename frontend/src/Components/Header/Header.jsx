@@ -2,6 +2,7 @@ import React from 'react'
 import {useSelector} from "react-redux";
 import { Link } from 'react-router-dom';
 import Robot from "../../Assets/Robot.png"
+import Logout from './Logout';
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.status)
@@ -22,11 +23,11 @@ function Header() {
   ]
   return (
     <div className='bg-white/20 backdrop-blur-lg w-full py-2 sm:py-4 fixed left-0 z-50 border-4 border-blue-300'>
-        <div className='flex items-center justify-around'>
+        <div className='flex items-center justify-around gap-x-4'>
             <div className='flex items-center gap-x-2 '>
                 <img src={Robot} alt="" 
                 className='w-[32px]'/>
-                <h2 className='text-2xl sm:text-3xl md:text-4xl'>
+                <h2 className='text-xl sm:text-2xl md:text-4xl'>
                 <Link to="/">
                  Codify
                 </Link>
@@ -36,7 +37,7 @@ function Header() {
             {navItems.map((navItem) => (
                 navItem.status? 
                 (<li key={navItem.path}
-                    className='relative group text-sm sm:text-lg md:text-xl  transition duration-300'>
+                    className='relative group text-sm sm:text-md md:text-xl  transition duration-300'>
                    <Link to={navItem.path}
                      className="text-white group-hover:text-blue-300 transition duration-300">
                     {navItem.name} 
@@ -46,6 +47,10 @@ function Header() {
                 :
                 null
             ))}
+            {authStatus &&
+             <li
+             className='cursor-pointer group text-sm sm:text-lg md:text-xl bg-blue-400 p-1 rounded-md hover:bg-white hover:text-black hover:shadow-md hover:shadow-blue-300'
+             ><Logout/></li>}
         </ul>
         </div>
     </div>

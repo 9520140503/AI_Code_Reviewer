@@ -3,6 +3,7 @@ import {z} from "zod"
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 import User from "../models/userModel.js";
+import authenticate from "../middleware/authMiddleware.js";
 
 const userRouter = Router();
 
@@ -79,8 +80,17 @@ userRouter.get('/profile', async(req,res) => {
 
 });
 
-userRouter.get('/logout',async(req,res) => {
-
+userRouter.get('/logout',authenticate,async(req,res) => {
+        const user = req.user;
+        if(!user){
+            return res.status(404).json("User is invalid");
+        }
+        res.clearCookie("token",{
+            httpOnly:true,
+            secure:process.env.NODE_ENV === "production",
+            sameSite:"strict"
+        });
+         res.status(200).json({ message: "Logged out successfully" });
 });
 
 export default userRouter;
