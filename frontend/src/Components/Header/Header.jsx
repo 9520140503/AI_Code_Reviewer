@@ -5,10 +5,14 @@ import Robot from "../../Assets/Robot.png";
 import Logout from './Logout';
 import { Cross, Image, SquareMenu, X } from "lucide-react";
 import Avatar from '../Avatar';
+import Sidepanel from './Sidepanel';
+import { logout } from '../../Store/authSlice';
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);
   const [mobile, setMobile] = useState(false);
+  const [isSideOpen, setisSideOpen] = useState(false);
+  const [userData,setUserData] = useState({}); 
 
   const navItems = [
     { name: "Home", path: "/", status: true },
@@ -49,7 +53,7 @@ function Header() {
           )}
 
           <li>
-            <Avatar/>
+           <button onClick={() => setisSideOpen(prev => !prev)}><Avatar userData={userData}/></button>
           </li>
         </ul>
 
@@ -79,6 +83,20 @@ function Header() {
           )}
         </ul>
       )}
+
+      {/* SidePanel */}
+      {
+        <div className={`flex fixed top-0 right-0 h-screen w-64 rounded p-4 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out ${isSideOpen && authStatus? "translate-x-0":"translate-x-full"}`}>
+          <button
+          className='absolute right-2 bg-black'
+          onClick={() => setisSideOpen(false)}><X/></button>
+          <Sidepanel 
+          userData={userData}
+          />
+        </div>
+      }
+
+
     </div>
   );
 }
