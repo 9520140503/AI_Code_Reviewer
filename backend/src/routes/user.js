@@ -72,12 +72,40 @@ userRouter.post('/login',async(req,res) => {
     }
 });
 
-userRouter.put('/updateProfile',async(req,res) => {
+userRouter.put('/updateProfile',authenticate,async(req,res) => {
+    const user = req.user;
+    const {image, fullname, email, password} = req.body
+    try {
+         const updateFields = { image, fullname, email };
 
+        if(password && password.trim() !== ''){
+            const hashPassword = await bcrypt.hash(password,10);
+            updateFields.password = hashPassword
+        }
+         await User.findByIdAndUpdate(user._id,updateFields,{new:true});
+        
+        res.json("User Info Have Been Updated");
+
+    } catch (error) {
+          console.log("Update Error ",error.message);
+        res.status(500).json({message:"Internal Server Error"});
+    }
 });
 
-userRouter.get('/profile', async(req,res) => {
+userRouter.get('/profile',authenticate, async(req,res) => {
+    const user = req.user;
+     if(!user){
+       return res.status(404).json("User is invalid");
+    }
 
+    const {image,fullname,email,mobile} = user;
+
+    res.json({
+        image,
+        fullname,
+        email,
+        mobile
+    })
 });
 
 userRouter.get('/logout',authenticate,async(req,res) => {

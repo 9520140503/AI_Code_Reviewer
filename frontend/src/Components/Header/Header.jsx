@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Robot from "../../Assets/Robot.png";
@@ -23,6 +23,27 @@ function Header() {
     { name: "Code Converter", path: "/code-converter", status: authStatus }
   ];
 
+  useEffect(() => {
+    const fetchUserInfo = async() => {
+      try {
+         const response = await fetch('http://localhost:3000/user/profile',{
+        method:"GET",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials:'include',
+       });
+
+       const result = await response.json();
+       console.log(result.fullname);
+       setUserData(result);
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+    fetchUserInfo();
+  },[])
+
   return (
     <div className='bg-white/20 backdrop-blur-lg w-full py-2 sm:py-4 px-6 fixed left-0 z-50 border-4 border-blue-300'>
       <div className='flex items-center justify-between md:px-12 gap-x-6'>
@@ -46,14 +67,11 @@ function Header() {
               </li>
             )
           ))}
-          {authStatus && (
-            <li className='text-base md:text-sm lg:text-lg cursor-pointer w-fit bg-blue-400 p-1 rounded-md hover:bg-white hover:text-black hover:shadow-md hover:shadow-blue-300'>
-              <Logout />
-            </li>
-          )}
-
+         
           <li>
-           <button onClick={() => setisSideOpen(prev => !prev)}><Avatar userData={userData}/></button>
+           <button onClick={() => setisSideOpen(prev => !prev)}>
+              <Avatar userData={{image:userData.image,fullname:userData.fullname,email:userData.email}}/>
+            </button>
           </li>
         </ul>
 

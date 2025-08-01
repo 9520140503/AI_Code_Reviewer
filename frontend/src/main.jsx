@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import store from './Store/store.js'
 import App from './App.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
-import {Converter,Home,Login,ReviewCode,Signup,Summarize} from "./Pages/index.js"
+import {Converter,EditProfile,Home,Login,ReviewCode,Signup,Summarize, ViewProfile} from "./Pages/index.js"
 import AuthLayout from './Components/AuthLayout.jsx'
 
 const router = createBrowserRouter([
@@ -40,6 +40,16 @@ const router = createBrowserRouter([
          path:"/code-converter",
          element:<AuthLayout authenticaiton={true}>
           <Converter/>
+        </AuthLayout>
+      },{
+        path:'/view-profile',
+         element:<AuthLayout authenticaiton={true}>
+          <ViewProfile/>
+        </AuthLayout>
+      },{
+        path:'/update-profile',
+         element:<AuthLayout authenticaiton={true}>
+          <EditProfile/>
         </AuthLayout>
       }
     ]

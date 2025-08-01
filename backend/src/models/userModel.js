@@ -22,6 +22,11 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Password is required'],
     minlength: [6, 'Password must be at least 6 characters'],
   },
+  mobile:{
+    type:String,
+    minlength: [10, 'Password must be at least 10 characters'],
+    match: [/^\d+$/, 'Mobile number must contain only digits'],
+  }
 }, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);
