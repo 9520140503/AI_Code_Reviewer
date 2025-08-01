@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.post('/get-review',getResponse);
 router.post('/get-summary',getSummary);
-router.post('/get-code',getCode);
+router.post('/get-converted-code',getCode);
 
 export default router;

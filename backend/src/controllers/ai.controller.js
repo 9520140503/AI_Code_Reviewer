@@ -9,7 +9,7 @@ export const getResponse = async(req,res) => {
 
 export const getSummary = async(req,res) => {
     const para = req.body.para;
-    console.log("Backend is hitted",para);
+    
     if(!para){
         return res.status(400).send("Para is needed");
     }
@@ -18,11 +18,11 @@ export const getSummary = async(req,res) => {
 }
 
 export const getCode = async(req,res) => {
-    const code = req.body.code;
+    const {code,lang} = req.body;
     if(!code){
         return res.status(400).send("code is needed");
     }
-    const response = await getConvertedCode(code);
-    console.log(response);
+    const response = await getConvertedCode(code,lang);
+  
     res.send(response);
 }

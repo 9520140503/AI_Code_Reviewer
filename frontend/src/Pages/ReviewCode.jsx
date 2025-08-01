@@ -14,6 +14,8 @@ function ReviewCode() {
 
   const handleSubmit = async () => {
     setLoading(true);
+    setError('');
+    setReceiveData('');
     try {
       const response = await fetch('http://localhost:3000/ai/get-review', {
         method: "POST",
@@ -36,12 +38,12 @@ function ReviewCode() {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4 sm:p-6 md:p-8 flex flex-col lg:flex-row gap-6 font-sans">
       {/* LEFT EDITOR PANEL */}
-      <div className="w-full lg:w-1/2 bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 flex flex-col gap-4">
+      <div className="w-full lg:w-1/2 bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 flex flex-col gap-4 h-[calc(100vh-2rem)]">
         <h2 className="text-center text-xl sm:text-2xl font-semibold text-white">Paste Your Code Here</h2>
         
-        <div className="flex-1 overflow-hidden rounded-lg border border-gray-700">
+        <div className="flex-1 rounded-lg border border-gray-700 overflow-y-auto">
           <Editor
-            height="calc(100vh - 220px)"
+            height="100%"
             language={selectLanguage || "javascript"}
             value={data}
             theme="vs-dark"
@@ -81,10 +83,10 @@ function ReviewCode() {
       </div>
 
       {/* RIGHT OUTPUT PANEL */}
-      <div className="w-full lg:w-1/2 bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 flex flex-col gap-4">
+      <div className="w-full lg:w-1/2 bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 flex flex-col gap-4 h-[calc(100vh-2rem)]">
         <h2 className="text-center text-xl sm:text-2xl font-semibold text-purple-300">Code Review Output</h2>
         
-        <div className="flex-1 bg-gray-900 rounded-lg p-4  border border-gray-700 overflow-hidden">
+        <div className="flex-1 bg-gray-900 rounded-lg p-4  border border-gray-700 overflow-y-auto">
           {receiveData ? (
             <MarkDown 
               rehypePlugins={[rehypeHighlight]}
