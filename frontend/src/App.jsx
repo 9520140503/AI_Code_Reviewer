@@ -34,6 +34,7 @@ function App() {
         console.warn('No token found in cookies.');
         navigate('/login');
       }
+
       setLoading(false);
     };
 

@@ -59,10 +59,10 @@ userRouter.post('/login',async(req,res) => {
         })
 
         res.cookie("token",token,{
-            httpOnly:true,
+            httpOnly:false,
             secure:true,
             sameSite:"None",
-            maxAge:2 *60 *60 * 1000
+            maxAge:12 *60 *60 * 1000
         })
 
         return res.status(200).json({message:"Login Successfully",token})
@@ -114,7 +114,7 @@ userRouter.get('/logout',authenticate,async(req,res) => {
             return res.status(404).json("User is invalid");
         }
         res.clearCookie("token",{
-            httpOnly:true,
+            httpOnly:false,
             secure:true,
             sameSite:"None"
         });

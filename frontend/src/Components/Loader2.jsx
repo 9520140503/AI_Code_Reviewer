@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Loader = () => {
   return (
     <StyledWrapper>
-      <div>
+      <div className='w-full'>
         <div className="box-of-star1">
           <div className="star star-position1" />
           <div className="star star-position2" />
