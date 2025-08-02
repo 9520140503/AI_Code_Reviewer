@@ -114,7 +114,7 @@ userRouter.get('/logout',authenticate,async(req,res) => {
             return res.status(404).json("User is invalid");
         }
         res.clearCookie("token",{
-            httpOnly:false,
+            httpOnly:true,
             secure:true,
             sameSite:"None"
         });
