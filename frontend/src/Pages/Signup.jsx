@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Robot from '../Assets/Robot.png'
 import { Link, useNavigate } from 'react-router-dom';
+import { Eye, EyeOff } from 'lucide-react';
 
 const SignupForm = () => {
   const navigate = useNavigate();
-  const [error,setError] = useState('')
+  const [error,setError] = useState('');
+  const [togglePassword,setTogglePassword] = useState(false);
   const [formData,setformData] = useState({
     fullname:"",
     email:"",
@@ -29,7 +31,8 @@ const SignupForm = () => {
           },
           body:JSON.stringify(formData)
         })
-        console.log("Signup Successfully",response.json());
+        const data = await response.json();
+        console.log("Signup Successfully",data);
         navigate('/login');
       } catch (error) {
         setError(error.message);
@@ -87,10 +90,10 @@ const SignupForm = () => {
                 required
               />
             </div>
-            <div className="mb-6">
+            <div className="mb-6 relative">
               <label htmlFor="password" className="block text-white text-sm mb-2">Password</label>
               <input
-                type="password"
+                type={togglePassword ? "text":"password"}
                 id="password"
                 name="password"
                  value={formData.password}
@@ -99,6 +102,11 @@ const SignupForm = () => {
                 className="w-full p-3 bg-white/20 text-white rounded-lg focus:bg-white/30 focus:outline-none placeholder-white/70 focus:ring-2 focus:ring-blue-500"
                 required
               />
+              <span className='absolute right-5 top-10'>
+                <button onClick={() => setTogglePassword(prev => !prev)}>
+                  {togglePassword ? <Eye/> : <EyeOff/>}
+                </button>
+              </span>
             </div>
             <button
               type="submit"
