@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Robot from "../../Assets/Robot.png";
 import Logout from './Logout';
 import { SquareMenu, X } from "lucide-react";
@@ -87,10 +87,9 @@ function Header() {
           {navItems.map(navItem => (
             navItem.status && (
               <li key={navItem.path} className='relative group text-base transition duration-300'>
-                <Link to={navItem.path} className="text-white group-hover:text-blue-300 transition duration-300">
+                <NavLink to={navItem.path} className={({isActive}) => `${isActive ? 'text-blue-900 bg-blue-300  px-2 py-1 rounded': 'text-white'}`}>
                   {navItem.name}
-                </Link>
-                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-blue-300 transition-all duration-500 group-hover:w-full"></span>
+                </NavLink>
               </li>
             )
           ))}
@@ -99,6 +98,12 @@ function Header() {
               <Logout />
             </li>
           )}
+
+          {authStatus && <li>
+           <button onClick={() => setisSideOpen(prev => !prev)}>
+              <Avatar userData={{image:userData.image,fullname:userData.fullname,email:userData.email}}/>
+            </button>
+          </li>}
         </ul>
       )}
 
