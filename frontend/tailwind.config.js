@@ -13,12 +13,12 @@ export default {
         },
         glow: {
           '0%,100%': {
-            borderColor: '#00ffff',
+            borderColor: '#10B981',
             outlineColor: '#00ffff',
           },
           '50%': {
-            borderColor: '#00bbff',
-            outlineColor: '#00bbff',
+            borderColor: '#ffffff',
+            outlineColor: '#030712',
           },
         }, 
       },

@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className="bg-gray-900 text-white min-h-screen flex flex-col">
       {/* Hero Section with Glassmorphism */}
-      <section className="py-12 px-4 sm:px-6 md:px-8 lg:px-12 glass-section md:mb-16">
+      <section className="py-12 px-4 sm:px-6 md:px-8 lg:px-12 glass-section md:mb-16 md:mt-5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 sm:gap-8">
           {/* Image Div */}
           <div className="w-full md:w-1/2 flex justify-center order-1 md:order-1">

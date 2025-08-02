@@ -45,7 +45,7 @@ function Header() {
   },[])
 
   return (
-    <div className='bg-white/20 backdrop-blur-lg w-full py-2 sm:py-4 px-6 fixed left-0 z-50 border-4 border-blue-300'>
+    <div className='bg-white/20 backdrop-blur-lg w-[96%] rounded-lg inset-x-0 mx-auto top-5 py-2 sm:py-4 px-6 fixed z-50 border-4 border-gray-950 shadow-purple-500 shadow-lg animate-glow'>
       <div className='flex items-center justify-between md:px-12 gap-x-6'>
         {/* Logo and Title */}
         <div className='flex items-center gap-x-2'>
@@ -109,7 +109,7 @@ function Header() {
 
       {/* SidePanel */}
       {
-        <div className={`flex fixed top-0 right-0 h-screen w-64 rounded p-4 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out ${isSideOpen && authStatus? "translate-x-0":"translate-x-full"}`}>
+        <div className={`flex fixed top-0 right-0 h-screen w-64 rounded p-4 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out ${isSideOpen && authStatus? "translate-x-0":"translate-x-[120%]"}`}>
           <button
           className='absolute right-2 bg-black'
           onClick={() => setisSideOpen(false)}><X/></button>

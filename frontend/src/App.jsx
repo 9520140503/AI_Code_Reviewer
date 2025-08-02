@@ -21,7 +21,6 @@ function App() {
   useEffect(() => {
     const checkAuth = async () => {
       const token = Cookies.get('token');
-      console.log('Token from cookie:', token);
 
       if (token) {
         try {
