@@ -59,7 +59,7 @@ userRouter.post('/login',async(req,res) => {
         })
 
         res.cookie("token",token,{
-            httpOnly:false,
+            httpOnly:true,
             secure:true,
             sameSite:"None",
             maxAge:12 *60 *60 * 1000

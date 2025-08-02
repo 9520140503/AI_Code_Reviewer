@@ -17,29 +17,31 @@ function App() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+useEffect(() => {
+  const checkAuth = async () => {
+    try {
+      const res = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/user/profile`, {
+        credentials: 'include', // ✅ include the cookie
+      });
 
-  useEffect(() => {
-    const checkAuth = async () => {
-      const token = Cookies.get('token');
-
-      if (token) {
-        try {
-          await dispatch(login({ token })); // Ensure login accepts an object
-          navigate('/');
-        } catch (error) {
-          console.error('Token validation failed:', error);
-          navigate('/login');
-        }
+      if (res.ok) {
+        const data = await res.json();
+        dispatch(login(data));
+        navigate('/');
       } else {
-        console.warn('No token found in cookies.');
         navigate('/login');
       }
-
+    } catch (err) {
+      console.error('Auth failed:', err);
+      navigate('/login');
+    } finally {
       setLoading(false);
-    };
+    }
+  };
 
-    checkAuth();
-  }, [dispatch, navigate]);
+  checkAuth();
+}, []);
+
 
   return (
     <div className="bg-gray-900 text-white min-h-screen">
