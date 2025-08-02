@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Robot from "../../Assets/Robot.png";
 import Logout from './Logout';
-import { Cross, Image, SquareMenu, X } from "lucide-react";
+import { SquareMenu, X } from "lucide-react";
 import Avatar from '../Avatar';
 import Sidepanel from './Sidepanel';
-import { logout } from '../../Store/authSlice';
+import { logout } from '../../Store/AuthSlice';
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);
@@ -68,11 +68,11 @@ function Header() {
             )
           ))}
          
-          <li>
+          {authStatus && <li>
            <button onClick={() => setisSideOpen(prev => !prev)}>
               <Avatar userData={{image:userData.image,fullname:userData.fullname,email:userData.email}}/>
             </button>
-          </li>
+          </li>}
         </ul>
 
         {/* Mobile Menu Toggle Button */}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {useDispatch} from "react-redux";
 import Robot from '../Assets/Robot.png';
 import { Link, useNavigate } from 'react-router-dom';
-import {login} from "../Store/authSlice.js"
+import {login} from "../Store/AuthSlice.js"
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -34,8 +34,8 @@ const LoginForm = () => {
 
         const FormData = await response.json();
         if(response.ok){
-          dispatch(login(FormData));
-          navigate('/');
+        await dispatch(login(FormData));
+          navigate('/update-alert');
         }
         console.log("Signup Successfull FormData")
       } catch (error) {

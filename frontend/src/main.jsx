@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import store from './Store/store.js'
 import App from './App.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
-import {Converter,EditProfile,Home,Login,ReviewCode,Signup,Summarize, ViewProfile} from "./Pages/index.js"
+import {Alert, Converter,EditProfile,Home,Login,ReviewCode,Signup,Summarize, ViewProfile} from "./Pages/index.js"
 import AuthLayout from './Components/AuthLayout.jsx'
 
 const router = createBrowserRouter([
@@ -51,6 +51,10 @@ const router = createBrowserRouter([
          element:<AuthLayout authenticaiton={true}>
           <EditProfile/>
         </AuthLayout>
+      },{
+        path:'/update-alert',
+         element:
+          <Alert/>
       }
     ]
   }

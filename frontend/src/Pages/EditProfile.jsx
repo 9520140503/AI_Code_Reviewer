@@ -91,7 +91,7 @@ function EditProfile() {
       </style>
       <form
         onSubmit={handleSubmit}
-        className="w-full bg-white/10 backdrop-blur-md rounded-2xl shadow-xl shadow-purple-500/20 p-6 sm:p-8 md:p-10 transition-all duration-300 hover:shadow-purple-500/40 animate-gradient animate-fadeIn"
+        className="w-full bg-white/10 backdrop-blur-md rounded-2xl shadow-xl shadow-purple-500/20 p-6 sm:p-8 md:p-10 transition-all duration-300 hover:shadow-purple-500/40 animate-gradient animate-fadeIn animate-glow"
       >
         <h2 className="text-xl sm:text-2xl md:text-3xl text-center font-semibold text-blue-300 mb-6 md:mb-8 animate-fadeIn">Edit Profile</h2>
         
