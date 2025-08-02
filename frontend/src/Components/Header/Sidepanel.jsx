@@ -20,10 +20,10 @@ function Sidepanel({userData = {}}) {
             </div>
 
             <div className='bg-white/10 text-center mx-2 my-2 p-2 rounded' id='same'>
-                    {authStatus && <p className='flex items-center gap-4'>
+                    {authStatus && <div className='flex items-center gap-4'>
                         <LogOut className='text-blue-300'/>
                         <Logout/>
-                    </p>}
+                    </div>}
             </div>
         </div>
     </div>
