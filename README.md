@@ -27,3 +27,5 @@ Code review & suggestions
 Text summarization
 
 Code conversion across languages
+
+![Codify UI](/frontend/src/Assets/Ai_Review.png)
