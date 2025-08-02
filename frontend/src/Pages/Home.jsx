@@ -132,7 +132,7 @@ function Home() {
       {/* Stats Section */}
       <section className="py-12 px-4 sm:px-6 md:px-8 lg:px-12 bg-gray-800 glass-section">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-300">Our Impact</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-300">Our Impact(Static Info)</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div className="bg-gray-700 p-4 sm:p-6 rounded-xl glass-card">
               <h3 className="text-3xl font-bold text-emerald-500">100K+</h3>
