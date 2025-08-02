@@ -120,7 +120,7 @@ function Footer() {
         </div>
       </div>
       <div className="mt-8 text-center text-gray-400 text-sm">
-        &copy; {new Date().getFullYear()} MyApp. All rights reserved.
+        &copy; {new Date().getFullYear()} Codify. All rights reserved.
       </div>
     </footer>
   );

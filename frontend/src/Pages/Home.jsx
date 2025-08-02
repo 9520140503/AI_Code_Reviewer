@@ -29,7 +29,7 @@ function Home() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-white">
               <span className='text-purple-500'>Code Smarter</span> with AI-Powered Precision
             </h1>
-            <p className="text-base sm:text-lg md:text-2xl text-gray-200 mb-6 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-2xl text-blue-300 mb-6 leading-relaxed">
               <Typewriter
                 options={{
                   strings: ['Debug Code.', 'Code Converter.', 'Summarizer.', 'Optimize Workflow.'],
@@ -230,15 +230,6 @@ function Home() {
           <p className="text-base sm:text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
             Join thousands of developers who are coding smarter, faster, and better with Codify. Start your journey today!
           </p>
-          <div className="flex justify-center gap-4">
-            <Link
-              to={authStatus ? '/review-code' : '/signup'}
-              className="inline-block bg-emerald-500 text-white py-2 px-6 sm:py-3 sm:px-8 rounded-xl hover:bg-white hover:text-black transition-all duration-300 shadow-md"
-            >
-              {authStatus ? 'Start Coding' : 'Sign Up Now'}
-            </Link>
-           
-          </div>
         </div>
       </section>
     </div>

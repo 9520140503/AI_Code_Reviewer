@@ -11,6 +11,6 @@
 }
 
 
-#recieve-area::-webkit-scrollbar{
+#recieve-area::-webkit-scrollbar,body::-webkit-scrollbar{
   display: none;
 }

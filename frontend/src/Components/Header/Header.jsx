@@ -6,7 +6,7 @@ import Logout from './Logout';
 import { SquareMenu, X } from "lucide-react";
 import Avatar from '../Avatar';
 import Sidepanel from './Sidepanel';
-import { logout } from '../../Store/AuthSlice';
+import { logout } from '../../Store/authSlice';
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);
@@ -93,11 +93,11 @@ function Header() {
               </li>
             )
           ))}
-          {authStatus && (
+          {/* {authStatus && (
             <li className='text-base cursor-pointer w-fit bg-blue-400 p-1 rounded-md hover:bg-white hover:text-black hover:shadow-md hover:shadow-blue-300'>
               <Logout />
             </li>
-          )}
+          )} */}
 
           {authStatus && <li>
            <button onClick={() => setisSideOpen(prev => !prev)}>
