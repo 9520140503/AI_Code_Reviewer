@@ -20,7 +20,7 @@ function EditProfile() {
     setLoader(true);
     setError('');
     try {
-        const response = await fetch('http://localhost:3000/user/updateProfile',{
+        const response = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/user/updateProfile`,{
         method:"PUT",
         credentials:'include',
         headers:{

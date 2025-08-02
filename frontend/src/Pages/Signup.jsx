@@ -24,7 +24,7 @@ const SignupForm = () => {
     e.preventDefault();
     const signup = async() => {
       try {
-        const response = await fetch('http://localhost:3000/user/signup',{
+        const response = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/user/signup`,{
           method:"POST",
           headers:{
             "Content-Type":"application/json"

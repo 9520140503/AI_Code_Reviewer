@@ -16,8 +16,8 @@ function ReviewCode() {
     setLoading(true);
     setError('');
     setReceiveData('');
-    try {
-      const response = await fetch('http://localhost:3000/ai/get-review', {
+    try {`${import.meta.env.VITE_MAIN_POINT_RENDER}/ai/get-review`
+      const response = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/ai/get-review`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

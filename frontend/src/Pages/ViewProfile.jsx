@@ -3,7 +3,6 @@ import Robot from "../Assets/Robot.png";
 import { Mail, Pen, Phone, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
-
 function ViewProfile() {
   const location = useLocation();
   const userData = location.state || {}

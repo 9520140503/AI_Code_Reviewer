@@ -15,8 +15,8 @@ function Summarizer() {
     setLoading(true);
     setError('');
     setReceiveData('');
-    try {
-      const response = await fetch('http://localhost:3000/ai/get-summary', {
+    try {`${import.meta.env.VITE_MAIN_POINT_RENDER}/ai/get-summary`
+      const response = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/ai/get-summary`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

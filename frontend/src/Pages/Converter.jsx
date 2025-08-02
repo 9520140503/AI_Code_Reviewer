@@ -19,7 +19,7 @@ function CodeConverter() {
     setReceiveData('');
     setConvertLanguage('');
     try {
-      const response = await fetch('http://localhost:3000/ai/get-converted-code', {
+      const response = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/ai/get-converted-code`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

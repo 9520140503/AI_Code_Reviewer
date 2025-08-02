@@ -8,14 +8,13 @@ function Alert() {
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const response = await fetch('http://localhost:3000/user/profile', {
+        const response = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/user/profile`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
           },
           credentials: 'include',
         });
-
         const result = await response.json();
         console.log(result.fullname);
         setUserData(result);

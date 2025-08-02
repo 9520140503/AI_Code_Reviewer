@@ -59,9 +59,9 @@ userRouter.post('/login',async(req,res) => {
         })
 
         res.cookie("token",token,{
-            httpOnly:false,
-            secure:process.env.NODE_ENV === "production",
-            sameSite:"strict",
+            httpOnly:true,
+            secure:true,
+            sameSite:"None",
             maxAge:2 *60 *60 * 1000
         })
 
@@ -115,8 +115,8 @@ userRouter.get('/logout',authenticate,async(req,res) => {
         }
         res.clearCookie("token",{
             httpOnly:true,
-            secure:process.env.NODE_ENV === "production",
-            sameSite:"strict"
+            secure:true,
+            sameSite:"None"
         });
          res.status(200).json({ message: "Logged out successfully" });
 });

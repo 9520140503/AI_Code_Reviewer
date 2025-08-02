@@ -10,7 +10,7 @@ function Logout() {
   const handleLogout = async() => {
     setLoading(true);
     try {
-      const response =  await fetch('http://localhost:3000/user/logout',{
+      const response =  await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/user/logout`,{
         method:"GET",
         credentials:'include',
       })
