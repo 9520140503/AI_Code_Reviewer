@@ -29,7 +29,10 @@ useEffect(() => {
       if (res.ok) {
         const data = await res.json();
         await dispatch(login(data));
-        navigate('/');
+        
+        setTimeout(() => {
+          navigate('/');
+        },300);
         
       } else {
         navigate('/login');

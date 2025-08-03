@@ -30,7 +30,6 @@ function Summarizer() {
     } finally {
       setData('');
       setLoading(false);
-      setSelectLanguage('');
     }
   };
 
