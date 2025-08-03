@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Robot from "../Assets/robot.png";
+import robot from "../assets/robot.png";
 
 function Alert() {
   const [userData, setUserData] = useState({});
@@ -30,8 +30,8 @@ function Alert() {
       <div className="bg-white/10 backdrop-blur-0 border-2 border-gray-200 rounded-xl shadow-lg w-full max-w-lg p-6 sm:p-8 shadow-2 shadow-purple-500">
         <div className="flex justify-center">
           <img 
-            src={Robot} 
-            alt="Robot icon"
+            src={robot} 
+            alt="robot icon"
             className="w-16 h-16 sm:w-20 sm:h-20 object-contain duration-800 animate-spin" 
           />
         </div>

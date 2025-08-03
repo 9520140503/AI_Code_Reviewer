@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-import Robot from "../../Assets/robot.png";
+import robot from "../../assets/robot.png";
 import Logout from './Logout';
 import { SquareMenu, X } from "lucide-react";
 import Avatar from '../Avatar';
@@ -49,7 +49,7 @@ function Header() {
       <div className='flex items-center justify-between md:px-12 gap-x-6'>
         {/* Logo and Title */}
         <div className='flex items-center gap-x-2'>
-          <img src={Robot} alt="Logo" className='w-[32px]' />
+          <img src={robot} alt="Logo" className='w-[32px]' />
           <h2 className='text-xl sm:text-2xl md:text-4xl'>
             <Link to="/">Codify</Link>
           </h2>

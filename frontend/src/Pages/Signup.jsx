@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Robot from '../Assets/robot.png'
+import robot from '../assets/robot.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
 
@@ -54,7 +54,7 @@ const SignupForm = () => {
         {/* Logo and Heading Div */}
         <div className="hidden flex-1 md:flex flex-col items-center justify-center bg-white/10 backdrop-blur-lg border border-white/30 rounded-2xl p-8 shadow-lg shadow-blue-300">
           <img
-            src={Robot}
+            src={robot}
             alt="Logo"
             className="w-32 h-36 mb-4 rounded-full animate-updown"
           />

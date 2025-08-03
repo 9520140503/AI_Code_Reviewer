@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import LastRobo from '../assets/lastRobo.png';
+import lastrobo from '../assets/lastRobo.png';
 import Typewriter from 'typewriter-effect';
 import "../../src/index.css";
 
@@ -16,7 +16,7 @@ function Home() {
           {/* Image Div */}
           <div className="w-full md:w-1/2 flex justify-center order-1 md:order-1">
             <img
-              src={LastRobo}
+              src={lastrobo}
               alt="Digital AI interface with glowing code patterns and neural networks"
               onError={(e) => (e.target.src = '/assets/fallback-ai.jpg')}
               className="w-full max-w-xs sm:max-w-sm animate-updown transition-transform duration-500 hover:scale-105"
