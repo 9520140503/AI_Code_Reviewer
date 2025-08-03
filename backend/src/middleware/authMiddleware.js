@@ -2,11 +2,13 @@ import jwt from "jsonwebtoken";
 import User from "../models/userModel.js"
 
 const authenticate = async(req,res,next) => {
-    const token = req.headers.token;
+    const tokenAuth = req.headers.authorization;
    
-    if(!token){
+    if(!tokenAuth || !tokenAuth.startsWith("Bearer")){
        return res.status(401).json({ message: 'No token found' }); 
     }
+
+    const token = tokenAuth.split(" ")[1];
 
     try {
         const decode = jwt.verify(token,process.env.JWT_SECRET);
