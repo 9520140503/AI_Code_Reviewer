@@ -62,7 +62,6 @@ userRouter.post('/login',async(req,res) => {
             httpOnly:true,
             secure:true,
             sameSite:"None",
-            domain:".onrender.com",
             maxAge:12 *60 *60 * 1000
         })
 
@@ -115,7 +114,6 @@ userRouter.get('/logout',authenticate,async(req,res) => {
             httpOnly:true,
             secure:true,
             sameSite:"None",
-            domain:".onrender.com"
         });
          res.status(200).json({ message: "Logged out successfully" });
 });
