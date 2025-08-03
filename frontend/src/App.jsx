@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useDispatch } from 'react-redux';
 import Cookies from 'js-cookie';
-import { login } from './Store/AuthSlice';
+import { login } from './Store/authSlice';
 import Loader from './Components/Loader2';
 
 function App() {

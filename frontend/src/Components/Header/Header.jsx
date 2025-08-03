@@ -6,7 +6,7 @@ import Logout from './Logout';
 import { SquareMenu, X } from "lucide-react";
 import Avatar from '../Avatar';
 import Sidepanel from './Sidepanel';
-import { logout } from '../../Store/AuthSlice';
+import { logout } from '../../Store/authSlice';
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);
