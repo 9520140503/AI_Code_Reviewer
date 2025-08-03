@@ -3,6 +3,8 @@ import User from "../models/userModel.js"
 
 const authenticate = async(req,res,next) => {
     const token = req.cookies.token;
+    console.log(token);
+    console.log(process.env.JWT_SECRET);
     if(!token){
        return res.status(401).json({ message: 'No token found' }); 
     }
