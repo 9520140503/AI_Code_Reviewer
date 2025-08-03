@@ -40,7 +40,9 @@ const LoginForm = () => {
       const FormData = await response.json();
       if (response.ok) {
         await dispatch(login(FormData));
-        navigate('/update-alert');
+         setTimeout(() => {
+          navigate('/update-alert');
+        }, 300);
       }
       console.log("Signup Successfull FormData");
     } catch (error) {

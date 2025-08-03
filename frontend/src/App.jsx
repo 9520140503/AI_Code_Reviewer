@@ -30,10 +30,6 @@ useEffect(() => {
         const data = await res.json();
         await dispatch(login(data));
         
-        setTimeout(() => {
-          navigate('/');
-        },300);
-        
       } else {
         navigate('/login');
       }
