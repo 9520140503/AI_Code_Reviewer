@@ -38,10 +38,10 @@ const LoginForm = () => {
       });
 
       const FormData = await response.json();
-      const {token} = FormData;
       if (response.ok) {
-         await dispatch(login(FormData));
-         localStorage.setItem('token',token);
+        const {token} = FormData;
+        localStorage.setItem('token',token);
+        dispatch(login(FormData));
          setTimeout(() => {
           navigate('/update-alert');
         }, 300);
