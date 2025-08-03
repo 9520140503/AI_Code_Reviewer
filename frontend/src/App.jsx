@@ -29,7 +29,7 @@ useEffect(() => {
 
       if (res.ok) {
         const data = await res.json();
-        dispatch(login(data));
+        await dispatch(login(data));
         if(location.pathname === '/login'){
           navigate('/');
         }
