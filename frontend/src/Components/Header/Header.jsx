@@ -24,7 +24,7 @@ function Header() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-     if (!token) return;
+
     const fetchUserInfo = async() => {
       try {
          const response = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/user/profile`,{
@@ -110,7 +110,7 @@ function Header() {
 
       {/* SidePanel */}
       {
-        <div className={`flex fixed top-0 right-0 h-screen w-64 rounded p-4 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out ${isSideOpen && authStatus? "translate-x-0":"translate-x-[120%]"}`}>
+        <div className={`flex fixed -top-5 -right-5 h-screen w-64 rounded p-4 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out ${isSideOpen && authStatus? "translate-x-0":"translate-x-[120%]"}`}>
           <button
           className='absolute right-2 bg-black'
           onClick={() => setisSideOpen(false)}><X/></button>
