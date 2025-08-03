@@ -108,7 +108,7 @@ userRouter.get('/profile',authenticate, async(req,res) => {
     })
 });
 
-userRouter.get('/logout',authenticate,async(req,res) => {
+userRouter.get('/logout',async(req,res) => {
         const user = req.user;
         if(!user){
             return res.status(404).json("User is invalid");
