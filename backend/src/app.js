@@ -14,7 +14,7 @@ app.use(cookieParser())
 
 app.use(cors(
     {
-    origin:'https://codify11.netlify.app/',
+    origin:'https://codify11.netlify.app',
     methods: ["GET","POST","PUT"],
     credentials:true
 }
