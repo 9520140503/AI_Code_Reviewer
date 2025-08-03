@@ -17,6 +17,7 @@ function App() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
 useEffect(() => {
   const checkAuth = async () => {
     try {
@@ -28,28 +29,22 @@ useEffect(() => {
       if (res.ok) {
         const data = await res.json();
         dispatch(login(data));
-        
-        if(window.location.pathname === "/login"){
-          navigate('/');
-        }
+        navigate('/');
         
       } else {
-        if (window.location.pathname !== '/login') {
-          navigate('/login');
-        }
+        navigate('/login');
       }
     } catch (err) {
       console.error('Auth failed:', err);
-      if (window.location.pathname !== '/login') {
         navigate('/login');
-      }
+      
     } finally {
       setLoading(false);
     }
   };
 
   checkAuth();
-}, []);
+}, [dispatch,navigate]);
 
 
   return (
