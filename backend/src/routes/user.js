@@ -58,12 +58,12 @@ userRouter.post('/login',async(req,res) => {
             expiresIn:"2h"
         })
 
-        res.cookie("token",token,{
-            httpOnly:true,
-            secure:true,
-            sameSite:"None",
-            maxAge:12 *60 *60 * 1000
-        })
+        // res.cookie("token",token,{
+        //     httpOnly:true,
+        //     secure:true,
+        //     sameSite:"None",
+        //     maxAge:12 *60 *60 * 1000
+        // })
 
         return res.status(200).json({message:"Login Successfully",token})
     } catch (error) {
@@ -109,12 +109,11 @@ userRouter.get('/profile',authenticate, async(req,res) => {
 });
 
 userRouter.get('/logout',authenticate,async(req,res) => {
-       
-        res.clearCookie("token",{
-            httpOnly:true,
-            secure:true,
-            sameSite:"None",
-        });
+        // res.clearCookie("token",{
+        //     httpOnly:true,
+        //     secure:true,
+        //     sameSite:"None",
+        // });
          res.status(200).json({ message: "Logged out successfully" });
 });
 

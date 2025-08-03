@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 app.use(cors(
     {
-    origin:'https://codify11.netlify.app',
+    origin:'http://localhost:5173',
     methods: ["GET", "POST", "PUT", "OPTIONS"],
     credentials:true
 }
