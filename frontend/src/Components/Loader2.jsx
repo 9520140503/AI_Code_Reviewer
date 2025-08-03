@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Loader = () => {
   return (
     <StyledWrapper>
-      <div className='w-full'>
+      <div className='w-fit'>
         <div className="box-of-star1">
           <div className="star star-position1" />
           <div className="star star-position2" />
@@ -58,6 +58,15 @@ const Loader = () => {
 }
 
 const StyledWrapper = styled.div`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   @keyframes snow {
     0% {
       opacity: 0;
@@ -90,6 +99,7 @@ const StyledWrapper = styled.div`
   .box-of-star4 {
     width: 100%;
     position: absolute;
+    overflow:hidden;
     z-index: 10;
     left: 0;
     top: 0;

@@ -21,19 +21,28 @@ useEffect(() => {
   const checkAuth = async () => {
     try {
       const res = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/user/profile`, {
-        credentials: 'include', // ✅ include the cookie
+        method:"GET",
+        credentials: 'include', 
       });
 
       if (res.ok) {
         const data = await res.json();
         dispatch(login(data));
-        navigate('/');
+        
+        if(window.location.pathname === "/login"){
+          navigate('/');
+        }
+        
       } else {
-        navigate('/login');
+        if (window.location.pathname !== '/login') {
+          navigate('/login');
+        }
       }
     } catch (err) {
       console.error('Auth failed:', err);
-      navigate('/login');
+      if (window.location.pathname !== '/login') {
+        navigate('/login');
+      }
     } finally {
       setLoading(false);
     }
@@ -47,11 +56,11 @@ useEffect(() => {
     <div className="bg-gray-900 text-white min-h-screen">
       <Header />
       <main
-        className="min-h-screen py-32 px-12"
+        className="min-h-screen py-32 "
         data-aos="zoom-in"
         data-aos-duration="1500"
       >
-        {loading ? <Loader /> : <Outlet />}
+        {!loading ? <Loader /> : <Outlet />}
       </main>
       <Footer />
     </div>
