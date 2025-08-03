@@ -17,6 +17,7 @@ function EditProfile() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem('token');
     setLoader(true);
     setError('');
     try {
@@ -24,7 +25,8 @@ function EditProfile() {
         method:"PUT",
         credentials:'include',
         headers:{
-            "Content-Type":"application/json"
+             "Content-Type": "application/json",
+             "Authorization":`Bearer ${token}`
         },
         body:JSON.stringify(userData)
         })

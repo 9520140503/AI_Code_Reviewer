@@ -8,18 +8,21 @@ function Logout() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false)
   const handleLogout = async() => {
+    const token = localStorage.getItem('token');
     setLoading(true);
     try {
       const response =  await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/user/logout`,{
         method:"GET",
-        credentials:'include',
+        headers:{
+           "Content-Type": "application/json",
+           "Authorization":`Bearer ${token}`
+        }
       })
 
       const data = await response.json();
 
-      console.log(data);
-
       if(response.ok){
+        localStorage.removeItem('token');
         dispatch(logout());
         navigate('/login');
       }

@@ -23,14 +23,16 @@ function Header() {
   ];
 
   useEffect(() => {
+    const token = localStorage.getItem('token');
+     if (!token) return;
     const fetchUserInfo = async() => {
       try {
          const response = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/user/profile`,{
         method:"GET",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Authorization":`Bearer ${token}`
         },
-        credentials:'include',
        });
 
        const result = await response.json();

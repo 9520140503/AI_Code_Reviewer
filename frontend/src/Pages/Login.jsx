@@ -32,14 +32,16 @@ const LoginForm = () => {
         method: "POST",
         credentials: "include",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData)
       });
 
       const FormData = await response.json();
+      const {token} = FormData;
       if (response.ok) {
-        await dispatch(login(FormData));
+         await dispatch(login(FormData));
+         localStorage.setItem('token',token);
          setTimeout(() => {
           navigate('/update-alert');
         }, 300);

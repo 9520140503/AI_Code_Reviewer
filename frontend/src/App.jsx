@@ -13,29 +13,40 @@ function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+  
+  useEffect(() => {
+  const token = localStorage.getItem('token');
 
-useEffect(() => {
+      if (!token) {
+      navigate('/login');
+      setLoading(false);
+      return;
+    }
+
   const checkAuth = async () => {
     try {
       const res = await fetch(`${import.meta.env.VITE_MAIN_POINT_RENDER}/user/profile`, {
         method:"GET",
-        credentials: 'include', 
+        headers:{
+          "Content-Type":"application/json",
+          "Authorization":`Bearer ${token}`
+        }
       });
 
       if (res.ok) {
         const data = await res.json();
-        await dispatch(login(data));
+        dispatch(login(data));
         
       } else {
         navigate('/login');
       }
     } catch (err) {
       console.error('Auth failed:', err);
-        navigate('/login');
+      navigate('/login');
       
     } finally {
       setLoading(false);
