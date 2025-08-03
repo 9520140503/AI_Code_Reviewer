@@ -62,6 +62,7 @@ userRouter.post('/login',async(req,res) => {
             httpOnly:true,
             secure:true,
             sameSite:"None",
+            domain:".onrender.com",
             maxAge:12 *60 *60 * 1000
         })
 
@@ -92,13 +93,11 @@ userRouter.put('/updateProfile',authenticate,async(req,res) => {
     }
 });
 
-userRouter.get('/profile', async(req,res) => {
-     console.log("Raw cookies received:", req.headers.cookie);
-  console.log("Parsed cookies object:", req.cookies);
-    // const user = req.user;
-    //  if(!user){
-    //    return res.status(404).json("User is invalid");
-    // }
+userRouter.get('/profile',authenticate, async(req,res) => {
+    const user = req.user;
+     if(!user){
+       return res.status(404).json("User is invalid");
+    }
 
     const {image,fullname,email,mobile} = user;
 
@@ -115,7 +114,8 @@ userRouter.get('/logout',authenticate,async(req,res) => {
         res.clearCookie("token",{
             httpOnly:true,
             secure:true,
-            sameSite:"None"
+            sameSite:"None",
+            domain:".onrender.com"
         });
          res.status(200).json({ message: "Logged out successfully" });
 });

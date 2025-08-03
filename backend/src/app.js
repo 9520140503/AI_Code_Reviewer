@@ -14,12 +14,12 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-app.use((req, res, next) => {
-  console.log("🧩 Debugging incoming request:");
-  console.log("Headers:", req.headers);
-  console.log("Cookies:", req.cookies);
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log("🧩 Debugging incoming request:");
+//   console.log("Headers:", req.headers);
+//   console.log("Cookies:", req.cookies);
+//   next();
+// });
 
 app.use(cors(
     {
