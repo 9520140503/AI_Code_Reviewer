@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
-import { Navigate, Outlet, useNavigate } from 'react-router-dom';
+import { Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useDispatch } from 'react-redux';
@@ -13,6 +13,7 @@ function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -29,7 +30,9 @@ useEffect(() => {
       if (res.ok) {
         const data = await res.json();
         dispatch(login(data));
-        navigate('/');
+        if(location.pathname === '/login'){
+          navigate('/');
+        }
         
       } else {
         navigate('/login');
@@ -44,7 +47,7 @@ useEffect(() => {
   };
 
   checkAuth();
-}, [dispatch,navigate]);
+}, [dispatch,navigate,location.pathname]);
 
 
   return (
