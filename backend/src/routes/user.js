@@ -61,7 +61,7 @@ userRouter.post('/login',async(req,res) => {
         res.cookie("token",token,{
             httpOnly:true,
             secure:true,
-            sameSite:"Strict",
+            sameSite:"None",
             maxAge:12 *60 *60 * 1000
         })
 
@@ -113,7 +113,7 @@ userRouter.get('/logout',authenticate,async(req,res) => {
         res.clearCookie("token",{
             httpOnly:true,
             secure:true,
-            sameSite:"Strict"
+            sameSite:"None"
         });
          res.status(200).json({ message: "Logged out successfully" });
 });
