@@ -8,6 +8,8 @@ dotenv.config();
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 app.use(express.json());
 
 app.use(cookieParser());
@@ -15,7 +17,7 @@ app.use(cookieParser());
 app.use(cors(
     {
     origin:'https://codify11.netlify.app',
-    methods: ["GET","POST","PUT"],
+    methods: ["GET", "POST", "PUT", "OPTIONS"],
     credentials:true
 }
 ));

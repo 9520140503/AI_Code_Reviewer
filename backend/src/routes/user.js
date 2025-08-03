@@ -108,7 +108,8 @@ userRouter.get('/profile',authenticate, async(req,res) => {
     })
 });
 
-userRouter.get('/logout',async(req,res) => {
+userRouter.get('/logout',authenticate,async(req,res) => {
+       
         res.clearCookie("token",{
             httpOnly:true,
             secure:true,
