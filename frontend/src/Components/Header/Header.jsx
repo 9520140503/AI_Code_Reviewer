@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-import Robot from "../../Assets/Robot.png";
+import Robot from "../../Assets/robot.png";
 import Logout from './Logout';
 import { SquareMenu, X } from "lucide-react";
 import Avatar from '../Avatar';
 import Sidepanel from './Sidepanel';
-import { logout } from '../../Store/authSlice';
+
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);

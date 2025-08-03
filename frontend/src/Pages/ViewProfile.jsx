@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Robot from "../Assets/Robot.png";
+import Robot from "../Assets/robot.png";
 import { Mail, Pen, Phone, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 

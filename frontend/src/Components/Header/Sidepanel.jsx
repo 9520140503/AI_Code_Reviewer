@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Avatar from '../Avatar'
 import { Icon, LogOut, User } from 'lucide-react'
 import Logout from './Logout'
