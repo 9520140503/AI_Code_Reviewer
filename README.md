@@ -28,4 +28,4 @@ Text summarization
 
 Code conversion across languages
 
-![Codify UI](/frontend/src/Assets/Ai_Review.png)
+![Codify UI](/frontend/src/Assets/ai_Review.png)
