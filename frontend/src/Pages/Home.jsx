@@ -1,8 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Robot from '../assets/Robot.png';
-import Robo from '../assets/Robo.png';
 import LastRobo from '../assets/LastRobo.png';
 import Typewriter from 'typewriter-effect';
 import "../../src/index.css";
