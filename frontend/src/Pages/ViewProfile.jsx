@@ -1,4 +1,4 @@
-import robot from "../assets/robot.png";
+import robot from "../Assets/robot.png";
 import { Mail, Pen, Phone, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 

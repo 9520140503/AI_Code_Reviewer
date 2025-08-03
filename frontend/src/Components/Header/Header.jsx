@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-import robot from "../../assets/robot.png";
-import Logout from './Logout';
+import robot from "../../Assets/robot.png";
 import { SquareMenu, X } from "lucide-react";
 import Avatar from '../Avatar';
 import Sidepanel from './Sidepanel';

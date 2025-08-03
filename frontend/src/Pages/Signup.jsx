@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import robot from '../assets/robot.png'
+import robot from '../Assets/robot.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
 

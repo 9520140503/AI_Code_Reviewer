@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { Eye, EyeOff } from 'lucide-react'; // 👈 Lucide icons
-import robot from '../assets/robot.png';
+import robot from '../Assets/robot.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from "../Store/authSlice";
 

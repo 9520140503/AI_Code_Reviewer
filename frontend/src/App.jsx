@@ -5,7 +5,7 @@ import { Navigate, Outlet, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useDispatch } from 'react-redux';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import { login } from './Store/authSlice';
 import Loader from './Components/Loader2';
 

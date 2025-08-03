@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import robot from "../assets/robot.png";
+import robot from "../Assets/robot.png";
 
 function Alert() {
   const [userData, setUserData] = useState({});

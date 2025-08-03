@@ -1,5 +1,5 @@
 import React from 'react';
-import robot from "../assets/robot.png";
+import robot from "../Assets/robot.png";
 
 function Avatar({ userData = {} }) {
   return (
