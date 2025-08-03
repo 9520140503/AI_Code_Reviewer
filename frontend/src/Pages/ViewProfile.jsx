@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Robot from "../Assets/robot.png";
+import robot from "../Assets/robot.png";
 import { Mail, Pen, Phone, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ function ViewProfile() {
           <div className="relative group">
             <div className="border-2 border-purple-500/30 rounded-full w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 overflow-hidden transition-all duration-300 group-hover:border-purple-500/60">
               <img
-                src={userData.image || Robot}
+                src={userData.image || robot}
                 alt="userimage"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
               />
