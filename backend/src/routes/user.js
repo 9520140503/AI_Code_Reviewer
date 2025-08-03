@@ -92,11 +92,13 @@ userRouter.put('/updateProfile',authenticate,async(req,res) => {
     }
 });
 
-userRouter.get('/profile',authenticate, async(req,res) => {
-    const user = req.user;
-     if(!user){
-       return res.status(404).json("User is invalid");
-    }
+userRouter.get('/profile', async(req,res) => {
+     console.log("Raw cookies received:", req.headers.cookie);
+  console.log("Parsed cookies object:", req.cookies);
+    // const user = req.user;
+    //  if(!user){
+    //    return res.status(404).json("User is invalid");
+    // }
 
     const {image,fullname,email,mobile} = user;
 
