@@ -13,7 +13,6 @@ function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  const location = useLocation();
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -30,9 +29,7 @@ useEffect(() => {
       if (res.ok) {
         const data = await res.json();
         await dispatch(login(data));
-        if(location.pathname === '/login'){
-          navigate('/');
-        }
+        navigate('/');
         
       } else {
         navigate('/login');
@@ -47,7 +44,7 @@ useEffect(() => {
   };
 
   checkAuth();
-}, [dispatch,navigate,location.pathname]);
+}, [dispatch,navigate]);
 
 
   return (
