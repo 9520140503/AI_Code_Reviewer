@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Eye, EyeOff } from 'lucide-react'; // 👈 Lucide icons
 import Robot from '../Assets/Robot.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { login } from "../Store/AuthSlice.js";
+import { login } from "../Store/AuthSlice";
 
 const LoginForm = () => {
   const navigate = useNavigate();
