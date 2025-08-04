@@ -54,7 +54,9 @@ const router = createBrowserRouter([
       },{
         path:'/update-alert',
          element:
+          <AuthLayout authenticaiton={true}>
           <Alert/>
+        </AuthLayout>
       }
     ]
   }
