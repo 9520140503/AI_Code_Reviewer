@@ -69,7 +69,7 @@ function Header() {
             )
           ))}
          
-          {authStatus && <li>
+          {!authStatus && <li>
            <button onClick={() => setisSideOpen(prev => !prev)}>
               <Avatar userData={userData}/>
             </button>
@@ -110,7 +110,7 @@ function Header() {
 
       {/* SidePanel */}
       {
-        <div className={` flex fixed -top-5 -right-5 h-screen w-64 rounded p-4 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out ${isSideOpen && authStatus? "translate-x-0":"translate-x-[130%]"}`}>
+        <div className={` flex fixed -top-5 -right-5 md:-right-10 h-screen w-64 rounded p-4 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out ${isSideOpen && !authStatus? "translate-x-0":"translate-x-[130%]"}`}>
           <button
           className='absolute right-8 bg-black'
           onClick={() => setisSideOpen(false)}><X/></button>
