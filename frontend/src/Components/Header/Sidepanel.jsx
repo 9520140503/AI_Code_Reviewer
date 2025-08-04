@@ -18,12 +18,13 @@ function Sidepanel({userData = {}}) {
             <Link to='/view-profile' state={userData}>View Profile</Link>
             </div>
 
-            <div className='bg-white/10 text-center mx-2 my-2 p-2 rounded' id='same'>
-                    {authStatus && <div className='flex items-center gap-4'>
+            {authStatus && <div className='bg-white/10 text-center mx-2 my-2 p-2 rounded' id='same'>
+                    <div className='flex items-center gap-4'>
                         <LogOut className='text-blue-300'/>
                         <Logout/>
-                    </div>}
-            </div>
+                    </div>
+            </div>}
+
         </div>
     </div>
   )
