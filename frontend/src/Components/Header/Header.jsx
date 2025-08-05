@@ -94,12 +94,6 @@ function Header() {
               </li>
             )
           ))}
-          {/* {authStatus && (
-            <li className='text-base cursor-pointer w-fit bg-blue-400 p-1 rounded-md hover:bg-white hover:text-black hover:shadow-md hover:shadow-blue-300'>
-              <Logout />
-            </li>
-          )} */}
-
           {authStatus && <li>
            <button onClick={() => setisSideOpen(prev => !prev)}>
               <Avatar userData={{image:userData.image,fullname:userData.fullname,email:userData.email}}/>
